@@ -10,3 +10,24 @@ SELECT ContactId INTO TempContacts FROM [xdb_collection].[Contacts]
 						WHERE IdentifierType = 1
 					  )
 			  )
+
+DELETE FROM [xdb_collection].[ContactFacets] WHERE ContactId IN (SELECT contactId FROM TempContacts)
+GO
+
+DELETE FROM [xdb_collection].[ContactIdentifiersIndex] WHERE ContactId IN (SELECT contactId FROM TempContacts)
+GO 
+
+DELETE FROM [xdb_collection].[InteractionFacets] WHERE ContactId IN (SELECT contactId FROM TempContacts)
+GO
+
+DELETE FROM [xdb_collection].[Interactions] WHERE ContactId IN (SELECT contactId FROM TempContacts)
+GO
+
+DELETE FROM [xdb_collection].[ContactIdentifiers] WHERE ContactId IN (SELECT contactId FROM TempContacts)
+GO
+  
+DELETE FROM [xdb_collection].[Contacts] WHERE ContactId IN (SELECT contactId FROM TempContacts)
+GO
+
+DELETE FROM [xdb_collection].[DeviceProfiles] WHERE LastKnownContactId IN (select contactId from TempContacts)
+GO
