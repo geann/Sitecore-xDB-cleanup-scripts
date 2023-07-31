@@ -31,3 +31,6 @@ GO
 
 DELETE FROM [xdb_collection].[DeviceProfiles] WHERE LastKnownContactId IN (select contactId from TempContacts)
 GO
+
+DROP TABLE TempContacts
+GO
