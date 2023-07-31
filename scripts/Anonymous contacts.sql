@@ -29,7 +29,7 @@ GO
 DELETE FROM [xdb_collection].[Contacts] WHERE ContactId IN (SELECT contactId FROM TempContacts)
 GO
 
-DELETE FROM [xdb_collection].[DeviceProfiles] WHERE LastKnownContactId IN (select contactId from TempContacts)
+DELETE FROM [xdb_collection].[DeviceProfiles] WHERE LastKnownContactId IN (SELECT contactId from TempContacts)
 GO
 
 DROP TABLE TempContacts
