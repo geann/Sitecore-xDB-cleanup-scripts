@@ -1,5 +1,5 @@
 SELECT InteractionId INTO TempInteractions FROM [xdb_collection].[Interactions] 
-	AND StartDateTime < '2022-09-01'
+	WHERE StartDateTime < '2022-09-01'
 
 SELECT * FROM TempInteractions
 GO 
