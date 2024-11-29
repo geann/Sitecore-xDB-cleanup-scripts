@@ -2,7 +2,8 @@
 This is a collection of SQL scripts that can help to clean up excessive Sitecore xDB data and reduce the Shard DB size.
 These scripts are useful for older versions of Sitecore platform that do not provide a tool for data cleanup:
 
-- Getting a list of anonymous contacts older than specified date and time
-- Getting a list of interactions with specific user agent to identify automated activities such as EXM events
-- Getting a list of interactions older than specified date and time
-- Getting a list of contacts with the highest number of interactions
+- Finding and removing anonymous contacts older than specified date and time and all related database records - [Anonymous contacts.sql](https://github.com/geann/Sitecore-xDB-cleanup-scripts/blob/main/scripts/EXM%20Interactions.sql)
+- Finding and removing interactions with specific user agents. This helps to clean up automated activities such as EXM events or bots/crawlers - [EXM Interactions.sql](https://github.com/geann/Sitecore-xDB-cleanup-scripts/blob/main/scripts/EXM%20Interactions.sql)
+- Finding and removing interactions older than specified date and time. This script can be useful if you would like to keep all contacts and only remove some of their interactions - [Old interactions.sql](https://github.com/geann/Sitecore-xDB-cleanup-scripts/blob/main/scripts/Old%20interactions.sql)
+- Getting a list of contacts with the highest number of interactions. This can be helpful if you want to see if there are any anomalies in the number of interactions and investigate why it happens - [Find contacts with the most interactions.sql](https://github.com/geann/Sitecore-xDB-cleanup-scripts/blob/main/scripts/Find%20contacts%20with%20the%20most%20interactions.sql)
+- Getting a list of interactions by ContactId. When you find a contact with too many interactions, you can retrieve all interactions of this contact to identify if they have something in common (for example, user agent, specific URL visits you do not want to track, etc.) - [Get interactions by ContactId.sql](https://github.com/geann/Sitecore-xDB-cleanup-scripts/blob/main/scripts/Get%20interactions%20by%20ContactId.sql)
